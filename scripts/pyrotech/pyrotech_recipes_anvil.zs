@@ -96,10 +96,15 @@ GraniteAnvil.addRecipe("blaze_lantern_to_powder",<minecraft:blaze_powder>*3, <qu
 GraniteAnvil.addRecipe("dwarven_measures",<minecraft:written_book>.withTag({pages: ["{\"text\":\"And so, the Fellowship lived happily ever after.\\nThe End\"}"], author: "Foreck", title: "Dwarven Measures"}),<extraalchemy:potion_ring>.withTag({Potion: "minecraft:invisibility", Quality: {}}), 1,"hammer", true);
 
 //D-Heads
-/* 
-GraniteAnvil.addRecipe("DragonHead1",<mod_lavacow:sharptooth>*3, <iceandfire:dragon_skull:*>.withTag({Stage: 1}),3,"hammer", true);
-GraniteAnvil.addRecipe("DragonHead2",<mod_lavacow:sharptooth>*7, <iceandfire:dragon_skull:*>.withTag({Stage: 2}),6,"hammer", true);
-GraniteAnvil.addRecipe("DragonHead3",<mod_lavacow:sharptooth>*12, <iceandfire:dragon_skull:*>.withTag({Stage: 3}),9,"hammer", true);
-GraniteAnvil.addRecipe("DragonHead4",<mod_lavacow:sharptooth>*17, <iceandfire:dragon_skull:*>.withTag({Stage: 4}),12,"hammer", true);
-GraniteAnvil.addRecipe("DragonHead5",<mod_lavacow:sharptooth>*25, <iceandfire:dragon_skull:*>.withTag({Stage: 5}),15,"hammer", true);
- */
+for i in 0 to 2 {
+	recipes.addShapeless("dragon_head_smashable_"~i, <iceandfire:dragon_skull>.definition.makeStack(i), 
+		[<iceandfire:dragon_skull>.definition.makeStack(i).marked("toRemove")],
+		function(out, ins, cInfo) {
+			return <iceandfire:dragon_skull>.definition.makeStack(i).withTag({Stage: ins.toRemove.tag.memberGet("Stage") as long});
+		},
+		null
+	);
+	for j in 1 to 6 {
+		GraniteAnvil.addRecipe("DragonHead_"~i~j,<mod_lavacow:sharptooth>*((0.5*j*j+2.5*j) as int), <iceandfire:dragon_skull>.definition.makeStack(i).withTag({Stage: j as long}),3*j,"hammer", true);
+	}
+}
