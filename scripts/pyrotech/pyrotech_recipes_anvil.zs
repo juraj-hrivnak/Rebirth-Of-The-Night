@@ -95,7 +95,7 @@ GraniteAnvil.addRecipe("dwarven_measures",<minecraft:written_book>.withTag({page
 
 //D-Heads
 for i in 0 to 2 {
-	recipes.addShapeless("dragon_head_smashable", <iceandfire:dragon_skull>.definition.makeStack(i), 
+	recipes.addShapeless("dragon_head_smashable_"~i, <iceandfire:dragon_skull>.definition.makeStack(i), 
 		[<iceandfire:dragon_skull>.definition.makeStack(i).mark("toRemove")],
 		function(out, ins, cInfo) {
 			return <iceandfire:dragon_skull>.definition.makeStack(i).withTag({Stage: ins.toRemove.tag.memberGet("Stage") as long});
@@ -103,6 +103,6 @@ for i in 0 to 2 {
 		null
 	);
 	for j in 1 to 6 {
-		GraniteAnvil.addRecipe("DragonHead1",<mod_lavacow:sharptooth>*((0.5*j*j+2.5*j) as int), <iceandfire:dragon_skull>.definition.makeStack(i).withTag({Stage: j as long}),3*j,"hammer", true);
+		GraniteAnvil.addRecipe("DragonHead_"~i~j,<mod_lavacow:sharptooth>*((0.5*j*j+2.5*j) as int), <iceandfire:dragon_skull>.definition.makeStack(i).withTag({Stage: j as long}),3*j,"hammer", true);
 	}
 }
