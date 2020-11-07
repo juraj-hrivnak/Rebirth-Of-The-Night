@@ -2,6 +2,7 @@ import crafttweaker.item.IIngredient;
 import mods.artisanworktables.builder.RecipeBuilder;
 
 recipes.removeByRecipeName("iceandfire:dragonmeal_alternate");
+recipes.removeByRecipeName("iceandfire:dragon_skull_bonemeal");
 
 mods.jei.JEI.removeAndHide(<iceandfire:sapphire_ore>);
 mods.jei.JEI.removeAndHide(<iceandfire:sapphire_block>);
@@ -71,4 +72,8 @@ recipes.addShaped("jungle_myrmex_swarm",<iceandfire:myrmex_jungle_swarm>*6,[
     [<iceandfire:myrmex_jungle_resin>,<iceandfire:myrmex_jungle_resin>,<iceandfire:myrmex_jungle_resin>],
     [<iceandfire:myrmex_jungle_resin>,<iceandfire:myrmex_jungle_egg:4>,<iceandfire:myrmex_jungle_resin>],
     [<iceandfire:myrmex_jungle_resin>,<ore:stick>,<iceandfire:myrmex_jungle_resin>]
+]);
+
+recipes.addShapeless("dragon_skull_bonemeal",<minecraft:dye:15>*6,[
+    <iceandfire:dragon_skull:*>, <minecraft:dye:15>
 ]);
