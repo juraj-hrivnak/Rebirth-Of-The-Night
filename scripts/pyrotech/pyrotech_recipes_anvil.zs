@@ -94,7 +94,7 @@ GraniteAnvil.addRecipe("blaze_lantern_to_powder",<minecraft:blaze_powder>*3, <qu
 GraniteAnvil.addRecipe("dwarven_measures",<minecraft:written_book>.withTag({pages: ["{\"text\":\"And so, the Fellowship lived happily ever after.\\nThe End\"}"], author: "Foreck", title: "Dwarven Measures"}),<extraalchemy:potion_ring>.withTag({Potion: "minecraft:invisibility", Quality: {}}), 1,"hammer", true);
 
 //D-Heads
-for i in 0..2 {
+for i in 0 to 2 {
 	recipes.addShapeless("dragon_head_smashable", <iceandfire:dragon_skull>.definition.makeStack(i), 
 		[<iceandfire:dragon_skull>.definition.makeStack(i).mark("toRemove")],
 		function(out, ins, cInfo) {
@@ -102,7 +102,7 @@ for i in 0..2 {
 		},
 		null
 	);
-	for j in 1..6 {
+	for j in 1 to 6 {
 		GraniteAnvil.addRecipe("DragonHead1",<mod_lavacow:sharptooth>*((0.5*j*j+2.5*j) as int), <iceandfire:dragon_skull>.definition.makeStack(i).withTag({Stage: j as long}),3*j,"hammer", true);
 	}
 }
