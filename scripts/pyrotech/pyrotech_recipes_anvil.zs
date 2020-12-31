@@ -100,14 +100,12 @@ for i in 0 to 2 {
 	recipes.addShapeless("dragon_head_smashable_"~i, <iceandfire:dragon_skull>.definition.makeStack(i), 
 		[<iceandfire:dragon_skull>.definition.makeStack(i).marked("toRemove")],
 		function(out, ins, cInfo) {
-			if (!(ins.toRemove.tag has "Stage")) {
-				return <iceandfire:dragon_skull>.definition.makeStack(i).withTag({Stage: 1});
-			}
-			return <iceandfire:dragon_skull>.definition.makeStack(i).withTag({Stage: ins.toRemove.tag.memberGet("Stage")});
+            var d = D(ins.toRemove.tag);
+			return <iceandfire:dragon_skull>.definition.makeStack(i).withTag({Stage:d.getInt("Stage", 1)});
 		},
 		null
 	);
 	for j in 1 to 6 {
-		GraniteAnvil.addRecipe("DragonHead_"~i~j,<mod_lavacow:sharptooth>*((0.5*j*j+2.5*j) as int), <iceandfire:dragon_skull>.definition.makeStack(i).withTag({Stage: j}),3*j,"hammer", true);
+		GraniteAnvil.addRecipe("DragonHead_"~i~"-"~j, <mod_lavacow:sharptooth>*((0.5*j*j+2.5*j) as int), <iceandfire:dragon_skull>.definition.makeStack(i).withTag({Stage: j}),3*j,"hammer", true);
 	}
 }
