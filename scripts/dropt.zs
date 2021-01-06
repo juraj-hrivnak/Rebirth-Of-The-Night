@@ -88,19 +88,18 @@ Dropt.list("wither_skull")
   );
 
 Dropt.list("bed")
-
   .add(Dropt.rule()
-      .matchBlocks(["minecraft:bed"])
+      .matchBlocks(["minecraft:bed:*"])
       .addDrop(Dropt.drop()
         .force()
-        .items([<minecraft:planks:0>*2]) // always drop a couple planks
+        .items([<minecraft:planks:0>,<minecraft:planks:0>]) // always drop a couple planks
       )
       .addDrop(Dropt.drop()
         .selector(Dropt.weight(50)) // drop nothing else 50% of time  
       )
       .addDrop(Dropt.drop()
         .selector(Dropt.weight(50))
-        .items([<minecraft:wool:0>*2]) // drop 2 wool 50% of the time
+        .items([<minecraft:wool:0> * 2]) // drop 2 wool 50% of the time
       )
   );
 
@@ -253,6 +252,13 @@ Dropt.list("sludge")
       .matchBlocks(["mod_lavacow:pileofsludge"])
       .addDrop(Dropt.drop())
   );
+  
+Dropt.list("non-resource_drops")
+
+  .add(Dropt.rule()
+      .matchBlocks(["contenttweaker:dolomite_straws","rotn_blocks:verribyne_0","rotn_blocks:verribyne_1"])
+      .addDrop(Dropt.drop())
+  );
 
 Dropt.list("clovers")
 
@@ -320,6 +326,48 @@ Dropt.list("decayed_scaffolding")
       .addDrop(Dropt.drop())	
   );
 
+Dropt.list("cobweb_silt")
+
+  .add(Dropt.rule()
+      .matchBlocks(["minecraft:web"])
+      .replaceStrategy("REPLACE_ITEMS")
+      .addDrop(Dropt.drop()
+	  .items([<contenttweaker:spider_silk>])
+      )
+  );
+
+Dropt.list("cave_grass")
+
+  .add(Dropt.rule()
+      .matchBlocks(["contenttweaker:cave_grass"])
+      .replaceStrategy("REPLACE_ITEMS")
+      .addDrop(Dropt.drop()
+          .selector(Dropt.weight(180)) // drops nothing if selected
+      )
+      .addDrop(Dropt.drop()
+          .selector(Dropt.weight(40))
+          .items([<harvestcraft:ediblerootitem>])
+      )
+	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(10))
+          .items([<pyrotech:strange_tuber>])
+      )
+  );
+
+Dropt.list("nether_grass")
+
+  .add(Dropt.rule()
+      .matchBlocks(["betternether:nether_grass"])
+      .replaceStrategy("ADD")
+      .addDrop(Dropt.drop()
+          .selector(Dropt.weight(180))
+      )
+      .addDrop(Dropt.drop()
+          .selector(Dropt.weight(10))
+          .items([<pyrotech:material:13>])
+      )
+  );
+
 Dropt.list("plants_basic")
 
   .add(Dropt.rule()
@@ -344,12 +392,12 @@ Dropt.list("plants_basic_dry")
           .selector(Dropt.weight(180)) // drops nothing if selected
       )
       .addDrop(Dropt.drop()
-          .selector(Dropt.weight(30))
-          .items([<pyrotech:material:12>])
+          .selector(Dropt.weight(25))
+          .items([<pyrotech:material:13>])
       )
 	  .addDrop(Dropt.drop()
-          .selector(Dropt.weight(20))
-          .items([<pyrotech:material:13>])
+          .selector(Dropt.weight(5))
+          .items([<pyrotech:material:11>])
       )
   );
   
@@ -470,3 +518,107 @@ Dropt.list("desert_varnish")
 		  .items("ALL", [<minecraft:sandstone>,<minecraft:clay_ball>*2])
       )	
   );
+Dropt.list("wonder_geode")
+
+  .add(Dropt.rule()
+      .matchBlocks(["rotn_blocks:wonder_geode"])
+      .addDrop(Dropt.drop()
+          .selector(Dropt.weight(60))
+		  .items([<minecraft:gold_nugget>])
+      )
+	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(100))
+		  .items([<minecraft:iron_nugget>])
+      )
+	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(60))
+		  .items([<contenttweaker:material_part:4>])
+      )
+	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(5))
+		  .items([<dungeontactics:diamond_nugget>])
+      )
+	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(60))
+		  .items([<iceandfire:silver_nugget>])
+      )
+	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(60))
+		  .items([<contenttweaker:material_part:6>])
+      )
+	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(60))
+		  .items([<pyrotech:material:8>])
+      )
+	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(20))
+		  .items([<pyrotech:material:36>])
+      )
+	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(20))
+		  .items([<contenttweaker:vis_speck>])
+      )
+	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(2))
+		  .items([<netherex:amethyst_crystal>])
+      )
+  );
+Dropt.list("ardicite")
+
+  .add(Dropt.rule()
+      .matchBlocks(["contenttweaker:starblock"])
+      .addDrop(Dropt.drop()
+          .selector(Dropt.weight(10)) // drops nothing if selected
+      )
+  	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(1)) // ground netherrack
+       	   .items([<betterwithmods:material:15>])
+      )
+  );
+Dropt.list("lodestone")
+
+  .add(Dropt.rule()
+      .matchBlocks(["dungeontactics:mithril_block"])
+  	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(1)) // ground netherrack
+       	   .items([<minecraft:stonebrick:3>])
+      )
+  ); 
+//Cobbled Path blocks
+Dropt.list("cobbled_coade")
+
+  .add(Dropt.rule()
+      .matchBlocks(["contenttweaker:cobblestone_path_coade"])
+  	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(1))
+       	   .items([<minecraft:cobblestone>])
+      )
+  ); 
+Dropt.list("cobbled_red_granite")
+
+  .add(Dropt.rule()
+      .matchBlocks(["contenttweaker:cobblestone_path_red_granite"])
+  	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(1))
+       	   .items([<undergroundbiomes:igneous_cobble>])
+      )
+  ); 
+Dropt.list("yeast_flour")
+
+  .add(Dropt.rule()
+      .matchBlocks(["contenttweaker:yeast_flour"])
+  	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(1))
+       	   .items([<betterwithmods:raw_pastry:3>])
+      )
+  );  
+Dropt.list("yeast")
+
+  .add(Dropt.rule()
+      .matchBlocks(["contenttweaker:yeast"])
+  	  .addDrop(Dropt.drop()
+          .selector(Dropt.weight(1))
+       	   .items([<exsartagine:yeast>])
+      )
+  );  
+ 
