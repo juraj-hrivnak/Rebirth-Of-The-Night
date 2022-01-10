@@ -12,7 +12,7 @@
         },
         {
             "type": "crafting",
-            "recipe": "betterwithmods:blocks/mech/gearbox",
+            "recipe": "crafttweaker:gearbox_wood_block",
             "text": "The $(thing)gearbox$() is a simple mechanism which allows waterwheels and windmills to transfer its energy to a driving axle.$(br2)Input: Axle $(br)Output: Axle"
         },
         {
@@ -22,7 +22,11 @@
         },
         {
             "type": "text",
-            "text": "$(o)Guidelines:$(br2)Gearbox have directional input; make sure its input face is facing the right side.$(br2)Aside from the input face, the rest of the gearbox faces can be used as outputs$(br2)You can rotate a gearbox by shift-right-clicking with an empty hand$(br2)Windmills and waterwheels can be placed on an axle and used to create rotational force for the rest of the network."
+            "text": "$(o)Guidelines:$(br2)Gearbox have directional input; make sure its input face is facing the right side.$(br2)Aside from the input face, the rest of the gearbox faces can be used as outputs$(br2)You can rotate a gearbox by shift-right-clicking with an empty hand$(br2)Windmills and waterwheels can be placed on an axle and used to"
+        },
+        {
+            "type": "text",
+            "text": "$(o)create rotational force for the rest of the network."
         },
         {
 			"type": "relations",

@@ -11,7 +11,7 @@
             "input": "contenttweaker:crucible:0",
             "output": "betterwithmods:cooking_pot",
             "time": "3:30min",
-            "text": "With this crucible, I'm able to generate enough heat to be able to process $(l:innovation/metallurgy/steel)crucible steel.$()$(br2)I can fully fire it by having lit fires beneath it in a 3x3 horizontal area."
+            "text": "With this crucible, I'm able to generate enough heat to be able to process $(l:innovation/metallurgy/steel)crucible steel$() as well as various other useful materials.$()$(br2)I can fully fire it by having lit fires beneath it in a 3x3 horizontal area."
         },
         {
 			"type": "relations",
