@@ -87,7 +87,8 @@
         {
 			"type": "relations",
 			"entries": [
-				"slayers_journal/beastiary/dragon"
+                "agriculture/taming/dragon",
+				"slayers_journal/bestiary/dragon"
 			]
 		}
     ]

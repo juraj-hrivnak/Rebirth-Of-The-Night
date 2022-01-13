@@ -17,7 +17,7 @@
         {
             "type": "relations",
             "entries": [
-                "survival/newbeginning/wood"
+                "newbeginning/wood"
             ]
         }
     ]

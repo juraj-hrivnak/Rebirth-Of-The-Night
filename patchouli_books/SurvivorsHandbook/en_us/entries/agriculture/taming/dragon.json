@@ -44,7 +44,7 @@
         {
             "type": "relations",
             "entries": [
-                "slayers_journal/beastiary/dragon",
+                "slayers_journal/bestiary/dragon",
                 "innovation/metallurgy/dragonsteel"
             ]
         }

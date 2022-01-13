@@ -1,7 +1,7 @@
 {
     "name": "Dragons",
     "icon": "iceandfire:dragonscales_gray",
-    "category": "slayers_journal_beastiary",
+    "category": "slayers_journal_bestiary",
     "advancement": "triumph:advancements/progression/slayersjournal",
     "sortnum": 1,
     "pages": [
